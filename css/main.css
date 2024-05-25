@@ -311,4 +311,39 @@ body {
   background-color: #1b1a17;
   color: #f0e3ca;
   font-family: "Inconsolata", monospace;
+}
+
+*, * > * {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1245px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 20.5px 0;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__list {
+  display: flex;
+  column-gap: 64px;
+}
+
+.anchor-link {
+  font-weight: 700;
+  font-size: 20px;
 }/*# sourceMappingURL=main.css.map */

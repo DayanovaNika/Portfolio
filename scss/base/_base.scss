@@ -3,3 +3,18 @@ body {
     color: $colorText;
     font-family: "Inconsolata", monospace;
 }
+
+*, * > * {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1245px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
