@@ -331,11 +331,12 @@ ul, ol, li {
 .header {
   padding: 20.5px 0;
 }
-
 .header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .menu__list {
@@ -346,4 +347,7 @@ ul, ol, li {
 .anchor-link {
   font-weight: 700;
   font-size: 20px;
+}
+.anchor-link:hover {
+  color: #7a4cc6 !important;
 }/*# sourceMappingURL=main.css.map */

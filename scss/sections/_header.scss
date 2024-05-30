@@ -1,14 +1,15 @@
 .header {
     padding: 20.5px 0;
-}
-.container {
-}
-.header__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
+
 .logo {
 }
 .logo__image {
@@ -25,4 +26,5 @@
 .anchor-link {
     font-weight: 700;
     font-size: 20px;
+    @include hoverColorLink($mainColor);
 }
