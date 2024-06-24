@@ -1,0 +1,27 @@
+.welcome {
+    &__content {
+
+    }
+}
+
+.hero {
+    max-width: 448px;
+
+    &__main-title {
+        font-size: 64px;
+        font-weight: 700;
+        color: $mainColor;
+        margin: 0 0 15px;
+    }
+
+    &__sub-title {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0 0 15px;
+    }
+
+    &__discription {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
