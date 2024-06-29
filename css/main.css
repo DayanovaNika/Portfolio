@@ -361,6 +361,13 @@ a:visited {
   color: #7a4cc6;
 }
 
+.welcome__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 72.5px 0;
+}
+
 .hero {
   max-width: 448px;
 }
@@ -378,4 +385,39 @@ a:visited {
 .hero__discription {
   font-size: 20px;
   font-weight: 400;
+}
+
+.avatar {
+  width: 629px;
+  height: 575px;
+  position: relative;
+  background-image: url(../img/welcome/avatar-background-desctop.png);
+  background-repeat: no-repeat;
+}
+.avatar__item {
+  justify-content: center;
+  width: 373px;
+  height: 371px;
+  border-radius: 53% 79% 100% 44%/52% 28% 100% 44%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.avatar__item--wraper-picture {
+  overflow: hidden;
+  z-index: 2;
+}
+.avatar__picture {
+  width: 100%;
+  object-fit: cover;
+}
+.avatar__item--under-first {
+  background-color: rgba(240, 227, 202, 0.8);
+  transform: translate(-50%, -50%) rotate(-24deg);
+}
+.avatar__item--under-second {
+  background-color: rgba(123, 76, 198, 0.5019607843);
+  transform: translate(-50%, -50%) rotate(30deg);
+  z-index: 1;
 }/*# sourceMappingURL=main.css.map */

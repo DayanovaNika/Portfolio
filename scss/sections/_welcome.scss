@@ -1,6 +1,9 @@
 .welcome {
     &__content {
-
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 72.5px 0;
     }
 }
 
@@ -23,5 +26,47 @@
     &__discription {
         font-size: 20px;
         font-weight: 400;
+    }
+}
+
+.avatar {
+    width: 629px;
+    height: 575px;
+    position: relative;
+    background-image: url(../img/welcome/avatar-background-desctop.png);
+    background-repeat: no-repeat;
+
+
+    &__item {
+        justify-content: center;
+        width: 373px;
+        height: 371px;
+        border-radius: 53% 79% 100%
+        44% / 52% 28% 100% 44% ;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    &__item--wraper-picture {
+        overflow: hidden;
+        z-index: 2;
+    }
+    
+    &__picture {
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    &__item--under-first {
+        background-color: rgba(240, 227, 202, 0.8);
+        transform:translate(-50%, -50%) rotate(-24deg);
+    }
+    
+    &__item--under-second {
+        background-color: $codeColorAvatar;
+        transform:translate(-50%, -50%) rotate(30deg);
+        z-index: 1;
     }
 }
