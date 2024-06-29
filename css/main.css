@@ -420,4 +420,17 @@ a:visited {
   background-color: rgba(123, 76, 198, 0.5019607843);
   transform: translate(-50%, -50%) rotate(30deg);
   z-index: 1;
+}
+
+.about-me__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 32px;
+  padding: 64px 0;
+}
+.about-me__discription {
+  font-weight: 400;
+  font-size: 24px;
+  max-width: 904px;
 }/*# sourceMappingURL=main.css.map */
