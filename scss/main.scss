@@ -4,7 +4,11 @@
 @import "./base/base";
 @import "./base/mixins";
 
+// blocks
+@import "./blocks/context-title";
+
 // sections
 @import "./sections/header";
 @import "./sections/welcome";
 @import "./sections/about-me";
+@import "./sections/skills";

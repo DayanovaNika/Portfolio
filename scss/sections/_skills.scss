@@ -1,0 +1,53 @@
+.skills {
+    &__content {
+        padding: 64px 0;
+
+        .context-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+    }
+}
+.list-skills {
+    display: flex;
+    column-gap: 16px;
+    justify-content: center;
+    &__item {
+    }
+}
+.card-skill {
+    background-color: $backgroundItems;
+    border: none;
+    width: 200px;
+    // height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 61px 0 58px;
+    row-gap: 16px;
+
+    &__wrapper-icon {
+        display: inline-block;
+
+        &--html, &--css {
+            width: 114px;
+            height: 128px;
+        }
+
+        &--js, &--git, &--scss {
+            width: 128px;
+            height: 128px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__wrapper-title {
+        font-size: 32px;
+        color: $colorText;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
