@@ -1,0 +1,22 @@
+.my-works {
+    &__content {
+        padding: 64px 0;
+    }
+    .context-title {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}
+
+.list-works {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    &__item {
+    }
+}
+
+.card-project {
+    &__img {
+    }
+}
