@@ -1,0 +1,56 @@
+.footer {
+    &__content {
+        padding: 64px 0;
+        display: flex;
+        gap: 64px;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-bottom: 16px;
+        width: 165px;
+        display: inline-block;
+
+        &__image {
+            width: 100%;
+        }
+    }
+}
+.invite {
+    &__text {
+        width: 213px;
+        line-height: 1.1;
+        font-size: 20px;
+    }
+}
+
+.contacts {
+    max-width: 384px;
+    margin-top: -10px;
+    .context-title {
+        margin-bottom: 16px;
+    }
+}
+.list-contacts-link {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__item {
+    }
+}
+.link-social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    
+    &__icon {
+        width: 32px;
+        height: 32px;
+    }
+    &__wrapper-text {
+        font-size: 24px;
+        color: $mainColor;
+    }
+}
