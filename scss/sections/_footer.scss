@@ -5,15 +5,21 @@
         gap: 64px;
         justify-content: center;
 
-    //     @media (max-width: 768px) {
-    //         background-color: red;
-    //     }
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .logo {
         margin-bottom: 16px;
         width: 165px;
         display: inline-block;
+
+        @media (max-width: 768px) {
+            margin: 0 auto 16px;
+            display: block;
+        }
 
         &__image {
             width: 100%;
@@ -25,6 +31,10 @@
         width: 213px;
         line-height: 1.1;
         font-size: 20px;
+
+        @media (max-width: 768px) {
+            width: 339px;
+        }
     }
 }
 
@@ -33,6 +43,11 @@
     margin-top: -10px;
     .context-title {
         margin-bottom: 16px;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            font-family: Impact;
+        }
     }
 }
 .list-contacts-link {

@@ -584,10 +584,22 @@ a:visited {
   gap: 64px;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .footer .logo {
   margin-bottom: 16px;
   width: 165px;
   display: inline-block;
+}
+@media (max-width: 768px) {
+  .footer .logo {
+    margin: 0 auto 16px;
+    display: block;
+  }
 }
 .footer .logo__image {
   width: 100%;
@@ -598,6 +610,11 @@ a:visited {
   line-height: 1.1;
   font-size: 20px;
 }
+@media (max-width: 768px) {
+  .invite__text {
+    width: 339px;
+  }
+}
 
 .contacts {
   max-width: 384px;
@@ -605,6 +622,12 @@ a:visited {
 }
 .contacts .context-title {
   margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .contacts .context-title {
+    text-align: center;
+    font-family: Impact;
+  }
 }
 
 .list-contacts-link {
