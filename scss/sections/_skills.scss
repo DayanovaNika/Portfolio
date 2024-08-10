@@ -10,10 +10,9 @@
 }
 .list-skills {
     display: flex;
-    column-gap: 16px;
+    gap: 16px;
     justify-content: center;
-    &__item {
-    }
+    flex-wrap: wrap;
 }
 .card-skill {
     background-color: $backgroundItems;

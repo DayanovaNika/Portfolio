@@ -469,9 +469,11 @@ a:visited {
 
 .list-skills {
   display: flex;
-  column-gap: 16px;
+  gap: 16px;
   justify-content: center;
+  flex-wrap: wrap;
 }
+
 .card-skill {
   background-color: #1f1e1b;
   border: none;
