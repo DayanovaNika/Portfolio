@@ -1,0 +1,11 @@
+.burger {
+    width: 40px;
+    height: 40px;
+    background-color: aliceblue;
+    z-index: 1;
+    display: none;
+
+    @media (max-width:570px) {
+        display: block;
+    }
+}
