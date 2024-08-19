@@ -576,7 +576,7 @@ a:visited {
   flex-direction: column;
   align-items: center;
   padding: 61px 0 58px;
-  row-gap: 16px;
+  gap: 16px;
 }
 .card-skill__wrapper-icon {
   display: inline-block;
@@ -598,6 +598,24 @@ a:visited {
   font-size: 32px;
   color: #f0e3ca;
   font-family: Arial, Helvetica, sans-serif;
+}
+@media (max-width: 662px) {
+  .card-skill {
+    flex-direction: row;
+    padding: 14px 36px;
+    width: 285px;
+  }
+  .card-skill__wrapper-icon--html, .card-skill__wrapper-icon--css {
+    width: 28px;
+    height: 32px;
+  }
+  .card-skill__wrapper-icon--js, .card-skill__wrapper-icon--git, .card-skill__wrapper-icon--scss {
+    width: 32px;
+    height: 32px;
+  }
+  .card-skill__wrapper-title {
+    font-size: 24px;
+  }
 }
 
 .my-works__content {
