@@ -56,6 +56,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
+    @media (max-width: 425px) {
+        flex-direction: column;
+    }
     &__item {
     }
 }

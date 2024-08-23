@@ -653,6 +653,11 @@ a:visited {
   margin: 0 auto;
   text-align: center;
 }
+@media (max-width: 425px) {
+  .card-project__title {
+    padding-top: 29.5px;
+  }
+}
 .card-project__title .context-title {
   margin-bottom: 16px;
 }
@@ -688,6 +693,12 @@ a:visited {
   padding: 12px 20px;
   display: inline-block;
   border-radius: 4px;
+}
+@media (max-width: 425px) {
+  .link-project {
+    padding: 16px 24px;
+    font-size: 18px;
+  }
 }
 
 .footer__content {
@@ -747,6 +758,11 @@ a:visited {
   gap: 32px;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+@media (max-width: 425px) {
+  .list-contacts-link {
+    flex-direction: column;
+  }
 }
 .link-social {
   display: flex;
