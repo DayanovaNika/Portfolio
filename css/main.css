@@ -343,15 +343,41 @@ a:visited {
 }
 
 .burger {
-  width: 40px;
-  height: 40px;
-  background-color: aliceblue;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  outline: none;
   z-index: 1;
   display: none;
+  cursor: pointer;
+}
+.burger__line {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 4px;
+  background-color: #f0e3ca;
+}
+.burger__line::before, .burger__line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 4px;
+  background-color: #f0e3ca;
+}
+.burger__line::before {
+  top: -10px;
+}
+.burger__line::after {
+  bottom: -10px;
 }
 @media (max-width: 570px) {
   .burger {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
