@@ -423,6 +423,10 @@ a:visited {
     width: 100%;
     height: 100vh;
     background-color: #1b1a17;
+    transition: top 0.3s;
+  }
+  .menu.open {
+    top: 0;
   }
 }
 

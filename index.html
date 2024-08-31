@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <script src="./js/burger.js" defer="defer"></script>
 </head>
 <body>
     <svg style="display: none;">
@@ -48,7 +49,7 @@
                 <a class="logo">
                     <img class="logo__image"src="./img/icons/logo.svg" alt="logo">
                 </a>
-                <nav class="menu">
+                <nav class="menu" id="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
                             <a class="anchor-link" href="#about-me">about me</a>
@@ -64,7 +65,7 @@
                         </li>
                     </ul>
                 </nav>
-                <button class="burger">
+                <button class="burger" id="burger">
                     <span class="burger__line"></span>
                 </button>
             </div>
