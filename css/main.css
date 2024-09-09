@@ -369,9 +369,11 @@ a:visited {
 }
 .burger__line::before {
   top: -10px;
+  transition: transform 0.3s, top 0.3s 0.3s;
 }
 .burger__line::after {
   bottom: -10px;
+  transition: transform 0.3s, bottom 0.3s 0.3s;
 }
 @media (max-width: 570px) {
   .burger {
@@ -379,6 +381,20 @@ a:visited {
     justify-content: center;
     align-items: center;
   }
+}
+
+.burger.active .burger__line {
+  background-color: transparent;
+}
+.burger.active .burger__line::before {
+  top: 0;
+  transition: top 0.3s, transform 0.3s 0.3s;
+  transform: rotate(45deg);
+}
+.burger.active .burger__line::after {
+  bottom: 0;
+  transition: bottom 0.3s, transform 0.3s 0.3s;
+  transform: rotate(-45deg);
 }
 
 .header {

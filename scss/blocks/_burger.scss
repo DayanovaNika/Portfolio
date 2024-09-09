@@ -26,10 +26,12 @@
 
         &::before {
             top: -10px;
+            transition: transform 0.3s, top 0.3s 0.3s;
         }
 
         &::after {
             bottom: -10px;
+            transition: transform 0.3s, bottom 0.3s 0.3s;
         }
     }
 
@@ -37,5 +39,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+.burger.active {
+    .burger__line {
+        background-color: transparent;
+    
+        &::before {
+            top: 0;
+            transition: top 0.3s, transform 0.3s 0.3s;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            bottom: 0;
+            transition:  bottom 0.3s, transform 0.3s 0.3s;
+            transform: rotate(-45deg);
+        }
     }
 }
