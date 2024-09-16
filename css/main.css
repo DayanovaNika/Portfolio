@@ -615,14 +615,34 @@ a:visited {
 }
 
 .card-skill {
-  background-color: #1f1e1b;
+  position: relative;
   border: none;
   width: 200px;
+  height: 300px;
+  overflow: hidden;
+  background-color: transparent;
+}
+.card-skill__front, .card-skill__back {
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: 0.5s;
+}
+.card-skill__front {
+  background-color: #1f1e1b;
+  transform: perspective(1000px) rotateY(0deg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 61px 0 58px;
+  justify-content: center;
   gap: 16px;
+}
+.card-skill__back {
+  transform: perspective(1000px) rotateY(180deg);
+  background-color: red;
 }
 .card-skill__wrapper-icon {
   display: inline-block;
@@ -662,6 +682,13 @@ a:visited {
   .card-skill__wrapper-title {
     font-size: 24px;
   }
+}
+
+.card-skill.open .card-skill__front {
+  transform: perspective(1000px) rotateY(180deg);
+}
+.card-skill.open .card-skill__back {
+  transform: perspective(1000px) rotateY(0deg);
 }
 
 .my-works__content {

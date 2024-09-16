@@ -8,7 +8,7 @@ burger.addEventListener("click", function() {
 
 menu.addEventListener("click", function(event) {
     const isAnchorLink = event.target.closest("[data-anchor-link]");
-
+    console.log(isAnchorLink);
     if (isAnchorLink) {
         menu.classList.remove("open");
         burger.classList.remove("active");

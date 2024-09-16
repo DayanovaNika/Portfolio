@@ -15,15 +15,39 @@
     flex-wrap: wrap;
 }
 .card-skill {
-    background-color: $backgroundItems;
+    position: relative;
     border: none;
     width: 200px;
-    // height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 61px 0 58px;
-    gap: 16px;
+    height: 300px;
+    overflow: hidden;
+    background-color: transparent;
+
+    &__front, &__back {
+        backface-visibility: hidden;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: 0.5s;
+
+    }
+    &__front {
+        background-color: $backgroundItems;
+        transform: perspective(1000px) rotateY(0deg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // padding: 61px 0 58px;
+        gap: 16px;
+        
+    }
+
+    &__back {
+        transform: perspective(1000px) rotateY(180deg);
+        background-color: red;
+    }
 
 
     &__wrapper-icon {
@@ -73,5 +97,15 @@
         &__wrapper-title {
             font-size: 24px;
         }
+    }
+}
+
+.card-skill.open {
+    .card-skill__front {
+        transform: perspective(1000px) rotateY(180deg);
+    }
+
+    .card-skill__back {
+        transform: perspective(1000px) rotateY(0deg);
     }
 }
