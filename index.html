@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <script src="./js/burger.js" defer="defer"></script>
+    <script src="./js/card-skill.js" defer="defer"></script>
 </head>
 <body>
     <svg style="display: none;">
@@ -114,10 +115,10 @@
                     <h6 class="context-title">
                         my skills
                     </h6>
-                    <ul class="list-skills">
+                    <ul class="list-skills" id="cardList">
                         <li class="list-skills__item">
 
-                            <button class="card-skill">
+                            <button class="card-skill" data-card>
                                 <span class="card-skill__front">
                                     <span class="card-skill__wrapper-icon card-skill__wrapper-icon--html">
                                         <svg>
@@ -133,7 +134,7 @@
 
                         </li>
                         <li class="list-skills__item">
-                            <button class="card-skill">
+                            <button class="card-skill" data-card>
                                 <span class="card-skill__front">
                                 <span class="card-skill__wrapper-icon card-skill__wrapper-icon--css">
                                     <svg>
@@ -148,7 +149,7 @@
                             </button>
                         </li>
                         <li class="list-skills__item">
-                            <button class="card-skill">
+                            <button class="card-skill" data-card>
                                 <span class="card-skill__front">
                                 <span class="card-skill__wrapper-icon card-skill__wrapper-icon--js">
                                     <svg>
@@ -163,7 +164,7 @@
                             </button>
                         </li>
                         <li class="list-skills__item">
-                            <button class="card-skill">
+                            <button class="card-skill" data-card>
                                 <span class="card-skill__front">
                                 <span class="card-skill__wrapper-icon card-skill__wrapper-icon--scss">
                                     <svg>
@@ -178,7 +179,7 @@
                             </button>
                         </li>
                         <li class="list-skills__item">
-                            <button class="card-skill">
+                            <button class="card-skill" data-card>
                                 <span class="card-skill__front">
                                 <span class="card-skill__wrapper-icon card-skill__wrapper-icon--git">
                                     <svg>

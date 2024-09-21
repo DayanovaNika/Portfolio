@@ -102,7 +102,7 @@
 
 .card-skill.open {
     .card-skill__front {
-        transform: perspective(1000px) rotateY(180deg);
+        transform: perspective(1000px) rotateY(-180deg);
     }
 
     .card-skill__back {
