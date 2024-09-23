@@ -24,11 +24,11 @@
 
     &__front, &__back {
         backface-visibility: hidden;
+        position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        position: absolute;
         transition: 0.5s;
 
     }
@@ -39,7 +39,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        // padding: 61px 0 58px;
         gap: 16px;
         
     }
@@ -73,6 +72,25 @@
         font-size: 32px;
         color: $colorText;
         font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &__cross {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        background-image: url(../img/icons/cross.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: 0.7s;
+
+        &:hover {
+            transform: rotate(360deg);
+            cursor: pointer;
+        }
     }
 
     @media (max-width: 662px) {

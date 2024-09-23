@@ -624,11 +624,11 @@ a:visited {
 }
 .card-skill__front, .card-skill__back {
   backface-visibility: hidden;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  position: absolute;
   transition: 0.5s;
 }
 .card-skill__front {
@@ -664,6 +664,23 @@ a:visited {
   font-size: 32px;
   color: #f0e3ca;
   font-family: Arial, Helvetica, sans-serif;
+}
+.card-skill__cross {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  background-image: url(../img/icons/cross.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.7s;
+}
+.card-skill__cross:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
 }
 @media (max-width: 662px) {
   .card-skill {
