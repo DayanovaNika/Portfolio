@@ -701,11 +701,30 @@ a:visited {
   }
 }
 
+.card-skill.open {
+  z-index: 6;
+}
 .card-skill.open .card-skill__front {
   transform: perspective(1000px) rotateY(-180deg);
 }
 .card-skill.open .card-skill__back {
   transform: perspective(1000px) rotateY(0deg);
+}
+
+.fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: -1;
+  transition: background-color 0.7s, z-index 0.75s 0s;
+}
+.fade.open {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  backdrop-filter: blur(5px);
 }
 
 .my-works__content {
