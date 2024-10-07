@@ -621,6 +621,7 @@ a:visited {
   height: 300px;
   overflow: hidden;
   background-color: transparent;
+  cursor: pointer;
 }
 .card-skill__front, .card-skill__back {
   backface-visibility: hidden;

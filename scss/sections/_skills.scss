@@ -21,6 +21,7 @@
     height: 300px;
     overflow: hidden;
     background-color: transparent;
+    cursor: pointer;
 
     &__front, &__back {
         backface-visibility: hidden;
