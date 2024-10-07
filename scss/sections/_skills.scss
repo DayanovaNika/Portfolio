@@ -31,6 +31,7 @@
         height: 100%;
         width: 100%;
         transition: 0.5s;
+        border-radius: 10px;
 
     }
     &__front {
@@ -46,7 +47,8 @@
 
     &__back {
         transform: perspective(1000px) rotateY(180deg);
-        background-color: red;
+        background-color: rgba(123, 76, 198, 0.445);
+        backdrop-filter: blur(5px);
     }
 
 
@@ -119,7 +121,15 @@
 }
 
 .card-skill.open {
+    max-width: 400px;
+    height: 300px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     z-index: 6;
+
     .card-skill__front {
         transform: perspective(1000px) rotateY(-180deg);
     }
