@@ -19,7 +19,7 @@
     border: none;
     width: 200px;
     height: 300px;
-    overflow: hidden;
+    // overflow: hidden;
     background-color: transparent;
     cursor: pointer;
 
@@ -34,9 +34,10 @@
         border-radius: 10px;
 
     }
+
     &__front {
         background-color: $backgroundItems;
-        transform: perspective(1000px) rotateY(0deg);
+        transform: perspective(600px) rotateY(0deg);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -46,7 +47,7 @@
     }
 
     &__back {
-        transform: perspective(1000px) rotateY(180deg);
+        transform: perspective(600px) rotateY(180deg);
         background-color: rgba(123, 76, 198, 0.445);
         backdrop-filter: blur(5px);
         
@@ -61,7 +62,6 @@
         color: $colorText;
         font-size: 20px;
     }
-
 
     &__wrapper-icon {
         display: inline-block;
@@ -82,6 +82,7 @@
             object-fit: cover;
         }
     }
+
     &__wrapper-title {
         font-size: 32px;
         color: $colorText;
@@ -109,9 +110,13 @@
 
     @media (max-width: 662px) {
 
-        flex-direction: row;
-        padding: 14px 36px;
         width: 285px;
+        height: 60px;
+        &__front {
+            flex-direction: row;
+            padding: 0px 36px;
+            justify-content: flex-start;
+        }
 
         &__wrapper-icon {
             &--html, &--css {
@@ -134,7 +139,7 @@
 .card-skill.open {
     max-width: 400px;
     height: 300px;
-    width: 100%;
+    width: 95%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -142,11 +147,11 @@
     z-index: 6;
 
     .card-skill__front {
-        transform: perspective(1000px) rotateY(-180deg);
+        transform: perspective(600px) rotateY(-180deg);
     }
 
     .card-skill__back {
-        transform: perspective(1000px) rotateY(0deg);
+        transform: perspective(600px) rotateY(0deg);
     }
 }
 

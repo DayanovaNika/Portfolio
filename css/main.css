@@ -619,7 +619,6 @@ a:visited {
   border: none;
   width: 200px;
   height: 300px;
-  overflow: hidden;
   background-color: transparent;
   cursor: pointer;
 }
@@ -635,7 +634,7 @@ a:visited {
 }
 .card-skill__front {
   background-color: #1f1e1b;
-  transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -643,7 +642,7 @@ a:visited {
   gap: 16px;
 }
 .card-skill__back {
-  transform: perspective(1000px) rotateY(180deg);
+  transform: perspective(600px) rotateY(180deg);
   background-color: rgba(123, 76, 198, 0.445);
   backdrop-filter: blur(5px);
 }
@@ -696,9 +695,13 @@ a:visited {
 }
 @media (max-width: 662px) {
   .card-skill {
-    flex-direction: row;
-    padding: 14px 36px;
     width: 285px;
+    height: 60px;
+  }
+  .card-skill__front {
+    flex-direction: row;
+    padding: 0px 36px;
+    justify-content: flex-start;
   }
   .card-skill__wrapper-icon--html, .card-skill__wrapper-icon--css {
     width: 28px;
@@ -716,7 +719,7 @@ a:visited {
 .card-skill.open {
   max-width: 400px;
   height: 300px;
-  width: 100%;
+  width: 95%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -724,10 +727,10 @@ a:visited {
   z-index: 6;
 }
 .card-skill.open .card-skill__front {
-  transform: perspective(1000px) rotateY(-180deg);
+  transform: perspective(600px) rotateY(-180deg);
 }
 .card-skill.open .card-skill__back {
-  transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
 }
 
 .fade {
