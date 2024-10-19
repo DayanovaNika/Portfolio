@@ -16,7 +16,8 @@ cardList.addEventListener("click", (e) => {
     }
 })
 
-// const arr = ["апельсин", "apple", "banan", "avocado", "watermelon"]; 
+const arr = ["апельсин", "apple", "banan", "avocado", "watermelon"]; 
+console.log(arr);
 
 // arr.push("cucumber");
 // arr.unshift("mango");
@@ -42,3 +43,17 @@ cardList.addEventListener("click", (e) => {
 // for (let i = 99; i >= 30; i--) {
 //     console.log(i);
 // }
+
+// const user = {
+//     name: "july",
+//     age: 30,
+//     adress: {
+//         country: "russia", 
+//         city: "moscow", 
+//     }, 
+//     sayHi: function(){
+//         console.log(`my name is ${this.name} i from ${this.adress.city}`);
+//     }
+// }
+// console.log(user);
+// user.sayHi();
