@@ -33,5 +33,31 @@ gsap.from('[works]',{
     }
 })
 
+gsap.from('#invite',{
+    opacity:0,
+    x: -300,
+    scrollTrigger:{
+        // markers: true,
+        trigger: '#footer',
+        start: 'top 90%',
+        end:'30% 80%',
+        scrub: 1,
+    }
+})
+
+gsap.from('#contacts-list',{
+    opacity:0,
+    x: 300,
+    scrollTrigger:{
+        // markers: true,
+        trigger: '#footer',
+        start: 'top 90%',
+        end:'30% 80%',
+        scrub: 1,
+    }
+})
+
+
+
 
 
