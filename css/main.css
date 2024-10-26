@@ -907,4 +907,42 @@ a:visited {
 .link-social__wrapper-text {
   font-size: 24px;
   color: #7a4cc6;
+}
+
+.real-checkbox {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #7a4cc6;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/icons/accept.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.real-checkbox:checked + .custom-checkbox::before {
+  transform: translate(-50%, -50%) scale(1);
 }/*# sourceMappingURL=main.css.map */
