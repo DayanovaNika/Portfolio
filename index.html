@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer="defer"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/animation.js" defer="defer"></script>
+    <script src="./js/app-anim-placeholder.js" defer="defer"></script>
 </head>
 <body>
     <svg style="display: none;">
@@ -319,24 +320,26 @@
                     <h6 class="context-title">
                         application
                     </h6>
-                    <form action="" class="form">
-                        <label for="" class="form__item">
-                            <input type="text" class="form__input">
-                            <span class="form__placeholder">
+                    <form action="" class="form" id="form">
+                        <label for="" class="form__item" data-item>
+                            <input type="text" class="form__input"
+                            data-input>
+                            <span class="form__placeholder" data-placeholder>
                                 name
                             </span>
                         </label>
 
-                        <label for="" class="form__item">
-                            <input type="email" class="form__input">
-                            <span class="form__placeholder">
+                        <label for="" class="form__item" data-item>
+                            <input type="email" class="form__input"
+                            data-input>
+                            <span class="form__placeholder" data-placeholder>
                                 email
                             </span>
                         </label>
 
-                        <label for="" class="form__item">
-                            <textarea class="form__input form__input--message" name="" id=""></textarea>
-                            <span class="form__placeholder">
+                        <label for="" class="form__item" data-item>
+                            <textarea class="form__input form__input--message" name="" id="" data-input></textarea>
+                            <span class="form__placeholder form__placeholder--message" data-placeholder>
                                 message
                             </span>
                         </label>

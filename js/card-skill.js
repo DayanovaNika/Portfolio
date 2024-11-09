@@ -16,8 +16,8 @@ cardList.addEventListener("click", (e) => {
     }
 })
 
-const arr = ["апельсин", "apple", "banan", "avocado", "watermelon"]; 
-console.log(arr);
+// const arr = ["апельсин", "apple", "banan", "avocado", "watermelon"]; 
+// console.log(arr);
 
 // arr.push("cucumber");
 // arr.unshift("mango");

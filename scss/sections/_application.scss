@@ -16,19 +16,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 .form__item {
     width: 100%;
     margin: 0 auto 15px;
     position: relative;
 }
+
+
 .form__input {
     width: 100%;
-    height: 50px;
+    height: 40px;
     outline: none;
     background-color: inherit;
     border: none;
     border-bottom: 2px solid $mainColor;
+    font-size: 24px;
+    color: $colorText;
 }
 .form__placeholder {
     position: absolute;
@@ -37,9 +42,20 @@
     transform: translateY(-50%);
     text-transform: capitalize;
     pointer-events: none;
+    transition: 0.7s;
+
+    &--message {
+        top: 10px;
+        transform: translateY(0);
+    }
+
+    &.open {
+        transform: translateY(-35px);
+        opacity: 0.8;
+    }
 }
 .form__input--message {
-    min-height: 50px;
+    min-height: 40px;
     max-height: 300px;
     resize: vertical;
     margin-bottom: 25px;
