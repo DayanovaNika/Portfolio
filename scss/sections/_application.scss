@@ -34,6 +34,27 @@
     border-bottom: 2px solid $mainColor;
     font-size: 24px;
     color: $colorText;
+
+    // &:valid {
+    //     border-color: green;
+    // }
+
+    // &:invalid {
+    //     border-color: red;
+    // }
+
+    &:required:invalid:not(:focus):not(:placeholder-shown) {
+        border-color: $mainColor; 
+    }
+        
+    &:required:invalid:focus,
+    &:required:invalid:not(:placeholder-shown) {
+        border-color: red; 
+    }
+        
+    &:required:valid {
+        border-color: green; 
+    }
 }
 .form__placeholder {
     position: absolute;

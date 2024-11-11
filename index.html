@@ -323,7 +323,7 @@
                     <form action="" class="form" id="form">
                         <label for="" class="form__item" data-item>
                             <input type="text" class="form__input"
-                            data-input>
+                            data-input required>
                             <span class="form__placeholder" data-placeholder>
                                 name
                             </span>
@@ -331,14 +331,14 @@
 
                         <label for="" class="form__item" data-item>
                             <input type="email" class="form__input"
-                            data-input>
+                            data-input required>
                             <span class="form__placeholder" data-placeholder>
                                 email
                             </span>
                         </label>
 
                         <label for="" class="form__item" data-item>
-                            <textarea class="form__input form__input--message" name="" id="" data-input></textarea>
+                            <textarea class="form__input form__input--message" name="" id="" data-input minlength="20" maxlength="200" required></textarea>
                             <span class="form__placeholder form__placeholder--message" data-placeholder>
                                 message
                             </span>
