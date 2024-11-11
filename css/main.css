@@ -723,7 +723,7 @@ a:visited {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   z-index: 6;
 }
 .card-skill.open .card-skill__front {
@@ -1033,4 +1033,26 @@ a:visited {
 
 .real-checkbox:checked + .custom-checkbox::before {
   transform: translate(-50%, -50%) scale(1);
+}
+
+.form__input::-webkit-scrollbar {
+  width: 14px;
+}
+
+.form__input::-webkit-scrollbar-track {
+  background: #32312E;
+}
+
+.form__input::-webkit-scrollbar-thumb {
+  background-color: rgba(123, 76, 198, 0.5019607843);
+  border-radius: 15px;
+  border: 3px solid #32312E;
+}
+
+textarea::-webkit-resizer {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url(../img/icons/ugol.svg) no-repeat center;
+  background-size: 90%;
 }/*# sourceMappingURL=main.css.map */

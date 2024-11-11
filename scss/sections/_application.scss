@@ -131,3 +131,22 @@
 .real-checkbox:checked + .custom-checkbox::before {
     transform: translate(-50%, -50%) scale(1);
 }
+
+.form__input::-webkit-scrollbar {
+    width: 14px;   
+}            
+.form__input::-webkit-scrollbar-track {
+    background: $colorLink;   
+}     
+.form__input::-webkit-scrollbar-thumb {
+    background-color: $codeColorAvatar;    
+    border-radius: 15px;       
+    border: 3px solid $colorLink;  
+}
+textarea::-webkit-resizer  {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(../img/icons/ugol.svg) no-repeat center;
+    background-size: 90%;
+}
