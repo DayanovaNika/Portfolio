@@ -7,3 +7,9 @@
 // 7. создать стрелки в слайдер
 // 8. создать пагинацию в слайдере
 
+const initialSlider = (sliderOfSelector) => {
+    const sliderElement = document.querySelector(sliderOfSelector);
+    console.log(sliderElement);
+}
+
+initialSlider("#slider");
