@@ -24,7 +24,14 @@ const initialSlider = (sliderOfSelector) => {
     sliderHidden.insertAdjacentElement("beforeend", sliderTrack); 
     sliderElement.insertAdjacentElement("beforeend", sliderHidden);
     
-    
+    const arrowLeft = document.createElement("button");
+    arrowLeft.className = "arrow-left";
+
+    const arrowRight = document.createElement("button");
+    arrowRight.className = "arrow-right";
+
+    sliderElement.insertAdjacentElement("beforeend", arrowLeft);
+    sliderElement.insertAdjacentElement("beforeend", arrowRight);
 
 }
 
