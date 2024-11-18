@@ -33,6 +33,18 @@ const initialSlider = (sliderOfSelector) => {
     sliderElement.insertAdjacentElement("beforeend", arrowLeft);
     sliderElement.insertAdjacentElement("beforeend", arrowRight);
 
+    const pagination = document.createElement("div");
+    pagination.className = "pagination";
+
+    for (let i = 0; i < slides.length; i++) {
+        const buttonPagination = document.createElement("button")
+        buttonPagination.className = "button-pagination";
+
+        pagination.insertAdjacentElement("beforeend", buttonPagination);
+    }
+
+    sliderElement.insertAdjacentElement("beforeend", pagination);
+
 }
 
 initialSlider("#slider");
