@@ -1,21 +1,4 @@
-// декомпозировать initialSlider
-const initialSlider = (sliderOfSelector) => {
-    const sliderElement = document.querySelector(sliderOfSelector);
-    const sliderHidden = document.createElement("div");
-    sliderHidden.className = "slider-hidden";
-
-    const sliderTrack = document.createElement("div");
-    sliderTrack.className = "slider-track";
-
-    const slides = Array.from(sliderElement.children);
-
-    slides.forEach(slide => {
-        sliderTrack.insertAdjacentElement("beforeend", slide);
-    });
-
-    sliderHidden.insertAdjacentElement("beforeend", sliderTrack); 
-    sliderElement.insertAdjacentElement("beforeend", sliderHidden);
-    
+const makeArrows = (parentElement) => {
     const arrowLeft = document.createElement("button");
     arrowLeft.classList.add("arrow-left", "arrow");
     const leftSprite =
@@ -36,8 +19,30 @@ const initialSlider = (sliderOfSelector) => {
     `;
     arrowRight.insertAdjacentHTML("beforeend", rightSprite);
 
-    sliderElement.insertAdjacentElement("beforeend", arrowLeft);
-    sliderElement.insertAdjacentElement("beforeend", arrowRight);
+    parentElement.insertAdjacentElement("beforeend", arrowLeft);
+    parentElement.insertAdjacentElement("beforeend", arrowRight);
+}
+
+const initialSlider = (sliderOfSelector) => {
+    const sliderElement = document.querySelector(sliderOfSelector);
+    const sliderHidden = document.createElement("div");
+    sliderHidden.className = "slider-hidden";
+    
+    const sliderTrack = document.createElement("div");
+    sliderTrack.className = "slider-track";
+
+    const slides = Array.from(sliderElement.children);
+
+    slides.forEach(slide => {
+        sliderTrack.insertAdjacentElement("beforeend", slide);
+    });
+
+    sliderHidden.insertAdjacentElement("beforeend", sliderTrack); 
+    sliderElement.insertAdjacentElement("beforeend", sliderHidden);
+    
+    makeArrows(sliderElement);
+
+    
 
     const pagination = document.createElement("div");
     pagination.className = "pagination";
