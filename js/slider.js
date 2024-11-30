@@ -23,8 +23,26 @@ const makeArrows = (parentElement) => {
     parentElement.insertAdjacentElement("beforeend", arrowRight);
 }
 
+const makePagination = (parentElement) => {
+    const pagination = document.createElement("div");
+    pagination.className = "pagination";
+    const slides = Array.from(parentElement.children);
+
+    for (let i = 0; i < slides.length; i++) {
+        const buttonPagination = document.createElement("button")
+        buttonPagination.className = "button-pagination";
+
+        pagination.insertAdjacentElement("beforeend", buttonPagination);
+    }
+
+    parentElement.insertAdjacentElement("beforeend", pagination);
+}
+
 const initialSlider = (sliderOfSelector) => {
     const sliderElement = document.querySelector(sliderOfSelector);
+
+    makePagination(sliderElement);
+    
     const sliderHidden = document.createElement("div");
     sliderHidden.className = "slider-hidden";
     
@@ -41,21 +59,6 @@ const initialSlider = (sliderOfSelector) => {
     sliderElement.insertAdjacentElement("beforeend", sliderHidden);
     
     makeArrows(sliderElement);
-
-    
-
-    const pagination = document.createElement("div");
-    pagination.className = "pagination";
-
-    for (let i = 0; i < slides.length; i++) {
-        const buttonPagination = document.createElement("button")
-        buttonPagination.className = "button-pagination";
-
-        pagination.insertAdjacentElement("beforeend", buttonPagination);
-    }
-
-    sliderElement.insertAdjacentElement("beforeend", pagination);
-
 }
 
 initialSlider("#slider");
