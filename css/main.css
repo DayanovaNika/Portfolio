@@ -1145,4 +1145,31 @@ textarea::-webkit-resizer {
 .slider__job {
   margin-bottom: 25px;
   font-size: 22px;
+}
+
+.button-pagination {
+  width: 10px;
+  height: 10px;
+  background-color: #f0e3ca;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button-pagination:hover {
+  background-color: #7a4cc6;
+}
+.button-pagination.active {
+  background-color: #7a4cc6;
+  transform: scale(1.4);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  transform: translateX(-50%);
 }/*# sourceMappingURL=main.css.map */

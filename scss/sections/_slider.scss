@@ -77,3 +77,31 @@
 }
 .slider__review {
 }
+.button-pagination {
+    width: 10px;
+    height: 10px;
+    background-color: $colorText;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    &:hover {
+        background-color: $mainColor;
+    }
+
+    &.active {
+        background-color: $mainColor;
+        transform: scale(1.4);
+    }
+
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+}
