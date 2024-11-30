@@ -1067,4 +1067,82 @@ textarea::-webkit-resizer {
   display: block;
   background: url(../img/icons/ugol.svg) no-repeat center;
   background-size: 90%;
+}
+
+.slider {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-hidden {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.arrow svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.arrow .arrow-icon {
+  fill: #f0e3ca;
+  transition: fill 0.3s;
+}
+.arrow:hover .arrow-icon {
+  fill: #7a4cc6;
+}
+
+.arrow-left {
+  left: -50px;
+}
+
+.arrow-right {
+  right: -50px;
+}
+
+.slider__slide {
+  display: flex;
+  gap: 12px;
+  background-color: #1f1e1b;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+  min-width: 100%;
+}
+.slider__slide .context-title {
+  margin-bottom: 5px;
+}
+
+.slider__wrapper-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #7a4cc6;
+  flex-shrink: 0;
+}
+
+.slider__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__job {
+  margin-bottom: 25px;
+  font-size: 22px;
 }/*# sourceMappingURL=main.css.map */

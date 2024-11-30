@@ -17,10 +17,24 @@ const initialSlider = (sliderOfSelector) => {
     sliderElement.insertAdjacentElement("beforeend", sliderHidden);
     
     const arrowLeft = document.createElement("button");
-    arrowLeft.className = "arrow-left";
+    arrowLeft.classList.add("arrow-left", "arrow");
+    const leftSprite =
+    `
+        <svg class="arrow-icon" width="166" height="292" viewBox="0 0 166 292">
+            <use href="./img/icons/sprites.svg#arrowLeft"></use>
+        </svg>
+    `;
+    arrowLeft.insertAdjacentHTML("beforeend", leftSprite);
 
     const arrowRight = document.createElement("button");
-    arrowRight.className = "arrow-right";
+    arrowRight.classList.add("arrow-right", "arrow");
+    const rightSprite = 
+    `
+    <svg class="arrow-icon" width="166" height="292" viewBox="0 0 166 292">
+    <use href="./img/icons/sprites.svg#arrowRight"></use>
+    </svg>
+    `;
+    arrowRight.insertAdjacentHTML("beforeend", rightSprite);
 
     sliderElement.insertAdjacentElement("beforeend", arrowLeft);
     sliderElement.insertAdjacentElement("beforeend", arrowRight);

@@ -1,0 +1,79 @@
+.reviews {
+}
+.reviews__content {
+}
+.slider {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.slider-hidden {
+    overflow: hidden;
+}
+.slider-track {
+    display: flex;
+}
+.arrow {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .arrow-icon {
+        fill: $colorText;
+        transition: fill 0.3s;
+    }
+    &:hover {
+        .arrow-icon {
+            fill: $mainColor;
+        }
+    }
+}
+.arrow-left {
+    left: -50px;
+}
+.arrow-right{
+    right: -50px;
+}
+.slider__slide {
+    display: flex;
+    gap: 12px;
+    background-color: $backgroundItems;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    min-width: 100%;
+    .context-title {
+        margin-bottom: 5px;
+    }
+}
+.slider__wrapper-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid $mainColor;
+    flex-shrink: 0;
+}
+.slider__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider__info {
+}
+.slider__job {
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+.slider__review {
+}
