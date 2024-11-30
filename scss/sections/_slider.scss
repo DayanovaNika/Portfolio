@@ -1,6 +1,11 @@
 .reviews {
 }
 .reviews__content {
+    padding: 64px 0;
+    .context-title {
+        text-align: center;
+        margin-bottom: 32px;
+    }
 }
 .slider {
     max-width: 600px;
