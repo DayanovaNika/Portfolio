@@ -1,6 +1,11 @@
+let currentWidth = 0;
+let currentSlide = 0;
+
 const makeArrows = (parentElement) => {
     const arrowLeft = document.createElement("button");
     arrowLeft.classList.add("arrow-left", "arrow");
+    arrowLeft.setAttribute("data-arrow", "left");
+
     const leftSprite =
     `
         <svg class="arrow-icon" width="166" height="292" viewBox="0 0 166 292">
@@ -11,6 +16,7 @@ const makeArrows = (parentElement) => {
 
     const arrowRight = document.createElement("button");
     arrowRight.classList.add("arrow-right", "arrow");
+    arrowRight.setAttribute("data-arrow", "right");
     const rightSprite = 
     `
     <svg class="arrow-icon" width="166" height="292" viewBox="0 0 166 292">
@@ -55,13 +61,36 @@ const makeSlides = (parentElement) => {
     parentElement.insertAdjacentElement("beforeend", sliderHidden);
 }
 
+const handlerEvent = (e) => {
+    const isLeftArrow = e.target.closest("[data-arrow='left']");
+    const isRightArrow = e.target.closest("[data-arrow='right']");
+    
+    if (isLeftArrow) {
+        console.log(1);
+    }
+    else if (isRightArrow) {
+        const currentMove = currentWidth * currentSlide;
+        const sliderTrack = document.querySelector(".slider-track");
+        sliderTrack.style.transform = `translateX(-${currentMove})`;
+    }
+}
+
 const initialSlider = (sliderOfSelector) => {
     const sliderElement = document.querySelector(sliderOfSelector);
-
-    makePagination(sliderElement);
-
+    
     makeSlides(sliderElement);
     
     makeArrows(sliderElement);
+
+    makePagination(sliderElement);
+
+    const slide = sliderElement.querySelector(".slider__slide");
+    currentWidth = slide.offsetWidth;
+
+    sliderElement.addEventListener("click", handlerEvent);
 }
+
 initialSlider("#slider");
+
+// 1. починить рендер слайдера 
+// 2. сделать передвижение на стрелки
