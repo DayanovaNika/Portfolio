@@ -38,27 +38,30 @@ const makePagination = (parentElement) => {
     parentElement.insertAdjacentElement("beforeend", pagination);
 }
 
-const initialSlider = (sliderOfSelector) => {
-    const sliderElement = document.querySelector(sliderOfSelector);
-
-    makePagination(sliderElement);
-    
+const makeSlides = (parentElement) => {
     const sliderHidden = document.createElement("div");
     sliderHidden.className = "slider-hidden";
     
     const sliderTrack = document.createElement("div");
     sliderTrack.className = "slider-track";
 
-    const slides = Array.from(sliderElement.children);
+    const slides = Array.from(parentElement.children);
 
     slides.forEach(slide => {
         sliderTrack.insertAdjacentElement("beforeend", slide);
     });
 
     sliderHidden.insertAdjacentElement("beforeend", sliderTrack); 
-    sliderElement.insertAdjacentElement("beforeend", sliderHidden);
+    parentElement.insertAdjacentElement("beforeend", sliderHidden);
+}
+
+const initialSlider = (sliderOfSelector) => {
+    const sliderElement = document.querySelector(sliderOfSelector);
+
+    makePagination(sliderElement);
+
+    makeSlides(sliderElement);
     
     makeArrows(sliderElement);
 }
-
 initialSlider("#slider");
