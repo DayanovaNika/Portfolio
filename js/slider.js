@@ -32,7 +32,8 @@ const makeArrows = (parentElement) => {
 const makePagination = (parentElement) => {
     const pagination = document.createElement("div");
     pagination.className = "pagination";
-    const slides = Array.from(parentElement.children);
+    const sliderTrack = parentElement.querySelector(".slider-track");
+    const slides = Array.from(sliderTrack.children);
 
     for (let i = 0; i < slides.length; i++) {
         const buttonPagination = document.createElement("button")
@@ -77,12 +78,12 @@ const handlerEvent = (e) => {
 
 const initialSlider = (sliderOfSelector) => {
     const sliderElement = document.querySelector(sliderOfSelector);
-    
+
     makeSlides(sliderElement);
-    
-    makeArrows(sliderElement);
 
     makePagination(sliderElement);
+    
+    makeArrows(sliderElement);
 
     const slide = sliderElement.querySelector(".slider__slide");
     currentWidth = slide.offsetWidth;
@@ -91,6 +92,3 @@ const initialSlider = (sliderOfSelector) => {
 }
 
 initialSlider("#slider");
-
-// 1. починить рендер слайдера 
-// 2. сделать передвижение на стрелки
