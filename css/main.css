@@ -1089,6 +1089,7 @@ textarea::-webkit-resizer {
 
 .slider-track {
   display: flex;
+  transition: 0.4s;
 }
 
 .arrow {

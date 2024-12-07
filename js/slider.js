@@ -1,5 +1,6 @@
 let currentWidth = 0;
 let currentSlide = 0;
+let slides = null;
 
 const makeArrows = (parentElement) => {
     const arrowLeft = document.createElement("button");
@@ -32,8 +33,6 @@ const makeArrows = (parentElement) => {
 const makePagination = (parentElement) => {
     const pagination = document.createElement("div");
     pagination.className = "pagination";
-    const sliderTrack = parentElement.querySelector(".slider-track");
-    const slides = Array.from(sliderTrack.children);
 
     for (let i = 0; i < slides.length; i++) {
         const buttonPagination = document.createElement("button")
@@ -52,7 +51,7 @@ const makeSlides = (parentElement) => {
     const sliderTrack = document.createElement("div");
     sliderTrack.className = "slider-track";
 
-    const slides = Array.from(parentElement.children);
+    slides = Array.from(parentElement.children);
 
     slides.forEach(slide => {
         sliderTrack.insertAdjacentElement("beforeend", slide);
@@ -67,12 +66,19 @@ const handlerEvent = (e) => {
     const isRightArrow = e.target.closest("[data-arrow='right']");
     
     if (isLeftArrow) {
-        console.log(1);
+        // дз тут 
+        // 1 прописать условие для движения трака в лево
+        // 2 если ты на 1 слайде то при клике на левую стрелку должно прокрутить к последнему слайду
     }
     else if (isRightArrow) {
+        if (currentSlide < slides.length - 1) {
+            currentSlide += 1;
+        } else {
+            currentSlide = 0;
+        }
         const currentMove = currentWidth * currentSlide;
         const sliderTrack = document.querySelector(".slider-track");
-        sliderTrack.style.transform = `translateX(-${currentMove})`;
+        sliderTrack.style.transform = `translateX(-${currentMove}px)`;
     }
 }
 
