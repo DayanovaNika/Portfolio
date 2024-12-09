@@ -37,6 +37,7 @@ const makePagination = (parentElement) => {
     for (let i = 0; i < slides.length; i++) {
         const buttonPagination = document.createElement("button")
         buttonPagination.className = "button-pagination";
+        buttonPagination.setAttribute("data-button-pagination", "");
 
         pagination.insertAdjacentElement("beforeend", buttonPagination);
     }
@@ -76,12 +77,19 @@ const chooseDirection = (direction) => {
 const handlerEvent = (e) => {
     const isLeftArrow = e.target.closest("[data-arrow='left']");
     const isRightArrow = e.target.closest("[data-arrow='right']");
+    const isButtonPagination = e.target.closest("[data-button-pagination]");
     
     if (isLeftArrow) {
         chooseDirection("left");
     }
     else if (isRightArrow) {
         chooseDirection("right");
+    }
+
+    if (isButtonPagination) {
+        const listButtons = Array.from(document.querySelectorAll("[data-button-pagination]"));
+        const index = listButtons.indexOf(isButtonPagination);
+        currentSlide = index;
     }
     motion();
 }
