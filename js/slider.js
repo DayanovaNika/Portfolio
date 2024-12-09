@@ -66,9 +66,14 @@ const handlerEvent = (e) => {
     const isRightArrow = e.target.closest("[data-arrow='right']");
     
     if (isLeftArrow) {
-        // дз тут 
-        // 1 прописать условие для движения трака в лево
-        // 2 если ты на 1 слайде то при клике на левую стрелку должно прокрутить к последнему слайду
+        if (currentSlide >= 0) {
+            currentSlide -= 1;
+        } else {
+            currentSlide = slides.length - 1;
+        }
+        const currentMove = currentWidth * currentSlide;
+        const sliderTrack = document.querySelector(".slider-track");
+        sliderTrack.style.transform = `translateX(-${currentMove}px)`;
     }
     else if (isRightArrow) {
         if (currentSlide < slides.length - 1) {
