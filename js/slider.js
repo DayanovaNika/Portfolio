@@ -60,31 +60,30 @@ const makeSlides = (parentElement) => {
     sliderHidden.insertAdjacentElement("beforeend", sliderTrack); 
     parentElement.insertAdjacentElement("beforeend", sliderHidden);
 }
-
+const motion = () => {
+    const currentMove = currentWidth * currentSlide;
+    const sliderTrack = document.querySelector(".slider-track");
+    sliderTrack.style.transform = `translateX(-${currentMove}px)`;
+}
+const chooseDirection = (direction) => {
+    if (direction === "left") {
+        currentSlide = currentSlide >= 0 ? currentSlide -= 1 : slides.length - 1;
+    }
+    else if (direction === "right") {
+        currentSlide = currentSlide < slides.length - 1 ? currentSlide += 1 : currentSlide = 0;
+    }
+}
 const handlerEvent = (e) => {
     const isLeftArrow = e.target.closest("[data-arrow='left']");
     const isRightArrow = e.target.closest("[data-arrow='right']");
     
     if (isLeftArrow) {
-        if (currentSlide >= 0) {
-            currentSlide -= 1;
-        } else {
-            currentSlide = slides.length - 1;
-        }
-        const currentMove = currentWidth * currentSlide;
-        const sliderTrack = document.querySelector(".slider-track");
-        sliderTrack.style.transform = `translateX(-${currentMove}px)`;
+        chooseDirection("left");
     }
     else if (isRightArrow) {
-        if (currentSlide < slides.length - 1) {
-            currentSlide += 1;
-        } else {
-            currentSlide = 0;
-        }
-        const currentMove = currentWidth * currentSlide;
-        const sliderTrack = document.querySelector(".slider-track");
-        sliderTrack.style.transform = `translateX(-${currentMove}px)`;
+        chooseDirection("right");
     }
+    motion();
 }
 
 const initialSlider = (sliderOfSelector) => {
