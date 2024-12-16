@@ -1,6 +1,8 @@
 let currentWidth = 0;
 let currentSlide = 0;
 let slides = null;
+let listButtons = null;
+let sliderElement = null;
 
 const makeArrows = (parentElement) => {
     const arrowLeft = document.createElement("button");
@@ -30,6 +32,14 @@ const makeArrows = (parentElement) => {
     parentElement.insertAdjacentElement("beforeend", arrowRight);
 }
 
+const styleButtons = (index) => {
+    const activeBtn = sliderElement.querySelector("button.active");
+    if (activeBtn) {
+        activeBtn.classList.remove("active");
+    }
+    listButtons[index].classList.add("active");
+}
+
 const makePagination = (parentElement) => {
     const pagination = document.createElement("div");
     pagination.className = "pagination";
@@ -37,6 +47,11 @@ const makePagination = (parentElement) => {
     for (let i = 0; i < slides.length; i++) {
         const buttonPagination = document.createElement("button")
         buttonPagination.className = "button-pagination";
+
+        if (i === 0) {
+            buttonPagination.classList.add("active");
+        }
+        
         buttonPagination.setAttribute("data-button-pagination", "");
 
         pagination.insertAdjacentElement("beforeend", buttonPagination);
@@ -61,11 +76,14 @@ const makeSlides = (parentElement) => {
     sliderHidden.insertAdjacentElement("beforeend", sliderTrack); 
     parentElement.insertAdjacentElement("beforeend", sliderHidden);
 }
+
 const motion = () => {
     const currentMove = currentWidth * currentSlide;
     const sliderTrack = document.querySelector(".slider-track");
     sliderTrack.style.transform = `translateX(-${currentMove}px)`;
+    styleButtons(currentSlide);
 }
+
 const chooseDirection = (direction) => {
     if (direction === "left") {
         currentSlide = currentSlide >= 0 ? currentSlide -= 1 : slides.length - 1;
@@ -74,6 +92,7 @@ const chooseDirection = (direction) => {
         currentSlide = currentSlide < slides.length - 1 ? currentSlide += 1 : currentSlide = 0;
     }
 }
+
 const handlerEvent = (e) => {
     const isLeftArrow = e.target.closest("[data-arrow='left']");
     const isRightArrow = e.target.closest("[data-arrow='right']");
@@ -87,7 +106,7 @@ const handlerEvent = (e) => {
     }
 
     if (isButtonPagination) {
-        const listButtons = Array.from(document.querySelectorAll("[data-button-pagination]"));
+        listButtons = Array.from(document.querySelectorAll("[data-button-pagination]"));
         const index = listButtons.indexOf(isButtonPagination);
         currentSlide = index;
     }
@@ -95,7 +114,7 @@ const handlerEvent = (e) => {
 }
 
 const initialSlider = (sliderOfSelector) => {
-    const sliderElement = document.querySelector(sliderOfSelector);
+    sliderElement = document.querySelector(sliderOfSelector);
 
     makeSlides(sliderElement);
 
