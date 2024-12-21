@@ -1,8 +1,12 @@
+const minSwipeMove = 40;
 let currentWidth = 0;
 let currentSlide = 0;
 let slides = null;
 let listButtons = null;
 let sliderElement = null;
+let startPoint = 0;
+let endPoint = 0;
+let currentMove = 0;
 
 const makeArrows = (parentElement) => {
     const arrowLeft = document.createElement("button");
@@ -31,6 +35,7 @@ const makeArrows = (parentElement) => {
     parentElement.insertAdjacentElement("beforeend", arrowLeft);
     parentElement.insertAdjacentElement("beforeend", arrowRight);
 }
+// проверить параметр при свайпе
 
 const styleButtons = (index) => {
     const activeBtn = sliderElement.querySelector("button.active");
@@ -51,7 +56,7 @@ const makePagination = (parentElement) => {
         if (i === 0) {
             buttonPagination.classList.add("active");
         }
-        
+
         buttonPagination.setAttribute("data-button-pagination", "");
 
         pagination.insertAdjacentElement("beforeend", buttonPagination);
@@ -113,6 +118,23 @@ const handlerEvent = (e) => {
     motion();
 }
 
+const calculateMove = () => {
+    currentMove = startPoint - endPoint;
+    if (Math.abs(currentMove) > minSwipeMove) {
+        currentMove > 0 ? chooseDirection("right") : chooseDirection("left");
+    } 
+    motion();
+}
+
+const startPointHandler = (e) => {
+    startPoint = e.clientX; 
+}
+
+const endPointHandler = (e) => {
+    endPoint = e.clientX; 
+    calculateMove();
+}
+
 const initialSlider = (sliderOfSelector) => {
     sliderElement = document.querySelector(sliderOfSelector);
 
@@ -126,6 +148,9 @@ const initialSlider = (sliderOfSelector) => {
     currentWidth = slide.offsetWidth;
 
     sliderElement.addEventListener("click", handlerEvent);
+    sliderElement.addEventListener("mousedown", startPointHandler);
+    sliderElement.addEventListener("mouseup", endPointHandler);
+
 }
 
 initialSlider("#slider");

@@ -58,6 +58,8 @@
     border-radius: 10px;
     align-items: center;
     min-width: 100%;
+    user-select: none;
+    cursor: grab;
     .context-title {
         margin-bottom: 5px;
     }
