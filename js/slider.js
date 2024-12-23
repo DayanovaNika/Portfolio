@@ -41,7 +41,7 @@ const styleButtons = (index) => {
     const activeBtn = sliderElement.querySelector("button.active");
     if (activeBtn) {
         activeBtn.classList.remove("active");
-    }
+    } 
     listButtons[index].classList.add("active");
 }
 
@@ -111,8 +111,8 @@ const handlerEvent = (e) => {
     }
 
     if (isButtonPagination) {
-        listButtons = Array.from(document.querySelectorAll("[data-button-pagination]"));
-        const index = listButtons.indexOf(isButtonPagination);
+        listButtons = document.querySelectorAll("[data-button-pagination]");
+        const index = Array.from(listButtons.indexOf(isButtonPagination));
         currentSlide = index;
     }
     motion();
@@ -134,7 +134,12 @@ const endPointHandler = (e) => {
     endPoint = e.type.includes("mouse") ? e.clientX : e.changedTouches[0].clientX;
     calculateMove();
 }
-
+const autoPLay = () => {
+    setInterval(() => { 
+        chooseDirection("right");
+        motion();
+    }, 5000);
+}
 const initialSlider = (sliderOfSelector) => {
     sliderElement = document.querySelector(sliderOfSelector);
 
@@ -151,6 +156,7 @@ const initialSlider = (sliderOfSelector) => {
     sliderElement.addEventListener("mousedown", startPointHandler);
     sliderElement.addEventListener("mouseup", endPointHandler);
 
+    autoPLay();
 }
 
 initialSlider("#slider");
