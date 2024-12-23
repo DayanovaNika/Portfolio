@@ -127,11 +127,11 @@ const calculateMove = () => {
 }
 
 const startPointHandler = (e) => {
-    startPoint = e.clientX; 
+    startPoint = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
 }
 
 const endPointHandler = (e) => {
-    endPoint = e.clientX; 
+    endPoint = e.type.includes("mouse") ? e.clientX : e.changedTouches[0].clientX;
     calculateMove();
 }
 
