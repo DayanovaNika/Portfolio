@@ -35,13 +35,12 @@ const makeArrows = (parentElement) => {
     parentElement.insertAdjacentElement("beforeend", arrowLeft);
     parentElement.insertAdjacentElement("beforeend", arrowRight);
 }
-// проверить параметр при свайпе
 
 const styleButtons = (index) => {
     const activeBtn = sliderElement.querySelector("button.active");
     if (activeBtn) {
         activeBtn.classList.remove("active");
-    } 
+    }
     listButtons[index].classList.add("active");
 }
 
@@ -91,7 +90,7 @@ const motion = () => {
 
 const chooseDirection = (direction) => {
     if (direction === "left") {
-        currentSlide = currentSlide >= 0 ? currentSlide -= 1 : slides.length - 1;
+        currentSlide = currentSlide > 0 ? currentSlide -= 1 : slides.length - 1;
     }
     else if (direction === "right") {
         currentSlide = currentSlide < slides.length - 1 ? currentSlide += 1 : currentSlide = 0;
@@ -102,7 +101,7 @@ const handlerEvent = (e) => {
     const isLeftArrow = e.target.closest("[data-arrow='left']");
     const isRightArrow = e.target.closest("[data-arrow='right']");
     const isButtonPagination = e.target.closest("[data-button-pagination]");
-    
+
     if (isLeftArrow) {
         chooseDirection("left");
     }
@@ -111,9 +110,7 @@ const handlerEvent = (e) => {
     }
 
     if (isButtonPagination) {
-        listButtons = document.querySelectorAll("[data-button-pagination]");
-        const index = Array.from(listButtons.indexOf(isButtonPagination));
-        currentSlide = index;
+        currentSlide = Array.from(listButtons).indexOf(isButtonPagination);
     }
     motion();
 }
@@ -134,19 +131,21 @@ const endPointHandler = (e) => {
     endPoint = e.type.includes("mouse") ? e.clientX : e.changedTouches[0].clientX;
     calculateMove();
 }
+
 const autoPLay = () => {
     setInterval(() => { 
         chooseDirection("right");
         motion();
     }, 5000);
 }
+
 const initialSlider = (sliderOfSelector) => {
     sliderElement = document.querySelector(sliderOfSelector);
 
     makeSlides(sliderElement);
 
     makePagination(sliderElement);
-    
+
     makeArrows(sliderElement);
 
     const slide = sliderElement.querySelector(".slider__slide");
@@ -156,6 +155,7 @@ const initialSlider = (sliderOfSelector) => {
     sliderElement.addEventListener("mousedown", startPointHandler);
     sliderElement.addEventListener("mouseup", endPointHandler);
 
+    listButtons = document.querySelectorAll("[data-button-pagination]");
     autoPLay();
 }
 
