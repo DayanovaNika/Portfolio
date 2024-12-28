@@ -1082,6 +1082,11 @@ textarea::-webkit-resizer {
   margin: 0 auto;
   position: relative;
 }
+@media (max-width: 768px) {
+  .slider .context-title {
+    font-size: 26px;
+  }
+}
 
 .slider-hidden {
   overflow: hidden;
@@ -1101,6 +1106,11 @@ textarea::-webkit-resizer {
   border: none;
   background: transparent;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
 }
 .arrow svg {
   width: 100%;
@@ -1127,7 +1137,7 @@ textarea::-webkit-resizer {
   display: flex;
   gap: 12px;
   background-color: #1f1e1b;
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 10px;
   align-items: center;
   min-width: 100%;
@@ -1136,6 +1146,11 @@ textarea::-webkit-resizer {
 }
 .slider__slide .context-title {
   margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+  .slider__slide {
+    flex-direction: column;
+  }
 }
 
 .slider__wrapper-avatar {
@@ -1156,6 +1171,19 @@ textarea::-webkit-resizer {
 .slider__job {
   margin-bottom: 25px;
   font-size: 22px;
+}
+@media (max-width: 768px) {
+  .slider__job {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider__review {
+    padding: 0px 10px;
+    text-align: center;
+  }
 }
 
 .button-pagination {

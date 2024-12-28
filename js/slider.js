@@ -156,7 +156,7 @@ const initialSlider = (sliderOfSelector) => {
     sliderElement.addEventListener("mouseup", endPointHandler);
 
     listButtons = document.querySelectorAll("[data-button-pagination]");
-    autoPLay();
+    // autoPLay();
 }
 
 initialSlider("#slider");
