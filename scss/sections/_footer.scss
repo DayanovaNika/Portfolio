@@ -29,12 +29,12 @@
 }
 .invite {
     &__text {
-        width: 213px;
+        max-width: 213px;
         line-height: 1.1;
         font-size: 20px;
 
         @media (max-width: 768px) {
-            width: 339px;
+            max-width: 339px;
         }
     }
 }
